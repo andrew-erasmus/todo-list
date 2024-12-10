@@ -1,9 +1,11 @@
-let project = function (titleIn, descrIn) {
+let createProject = function (idIn, titleIn, descrIn) {
+  let id = idIn;
   let title = titleIn;
   let description = descrIn;
   let todos = [];
+  let todoId = 0;
 
-  return { title, description, todos };
+  return { id, title, description, todos, todoId };
 };
 
-export { project };
+export { createProject };

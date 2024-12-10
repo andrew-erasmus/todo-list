@@ -1,4 +1,12 @@
-const todo = function (titleIn, descrIn, dueIn, priorityIn, notesIn) {
+const createTodo = function (
+  idIn,
+  titleIn,
+  descrIn,
+  dueIn,
+  priorityIn,
+  notesIn
+) {
+  let id = idIn;
   let title = titleIn;
   let description = descrIn;
   let dueDate = dueIn;
@@ -7,6 +15,7 @@ const todo = function (titleIn, descrIn, dueIn, priorityIn, notesIn) {
   let isChecked = false;
 
   return {
+    id,
     title,
     description,
     dueDate,
@@ -16,4 +25,4 @@ const todo = function (titleIn, descrIn, dueIn, priorityIn, notesIn) {
   };
 };
 
-export { todo };
+export { createTodo };
