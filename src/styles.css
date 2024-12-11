@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  color: black;
+}
+
+body {
+  height: 97vh;
+  display: flex;
+  background-color: #f0eae48e;
+  padding: 10px;
+}
+
+#sidebar {
+  width: 25%;
+  background-color: #7789ab;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: #c7f022 solid 5px;
+  box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+#content {
+  width: 75%;
+  background-color: #f0eae48e;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  border: solid black;
+  background-color: #c7f022;
+  border-radius: 80px;
+  padding: 6px 8px 6px 8px;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #849f18;
+  transition: ease 200ms;
+}
+
+.project-button {
+  border-radius: 0;
+}
+
+#projects {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  gap: 5px;
+  overflow-y: auto;
+}
+
+#new-buttons {
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+}
+
+#new-buttons > a:hover {
+  transform: scale(1.05);
+  transition: ease 300ms;
+}
+
+#content-header-bar {
+  background-color: #c7f022;
+  border-top: solid black 5px;
+  border-bottom: solid black 5px;
+  border-right: solid black 5px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#todo-container {
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todo-card {
+  background-color: #7789ab13;
+  height: 50px;
+  padding: 12px;
+  border-left: #c7f022 solid 5px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-card:hover {
+  transform: scale(1.01);
+  transition: ease 300ms;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.todo-title {
+  padding-bottom: 2px;
+  margin-right: auto;
+}
+
+.todo-description {
+  border: solid black 2px;
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 10px;
+}
+
+.todo-priority {
+  border: solid black 2px;
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 15px;
+}
+
+.todo-due-date {
+  margin-right: 15px;
+}
+
+.todo-edit-button {
+  padding-top: 4px;
+  margin-right: 10px;
+}
+
+.todo-delete-button {
+  padding-top: 4px;
+  margin-right: 10px;
+}
