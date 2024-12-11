@@ -6,10 +6,21 @@ import { contentGenerator } from "./projectContentUI.js";
 
 let projectList = [];
 let projectId = 0;
-let todoContainer = document.getElementById("todo-container");
 let contentContainer = document.getElementById("content");
 
 addProject(projectId, "Home", "All to do's");
+addTodo(projectList[0], "test", "test", "test", "test", "test");
+addTodo(projectList[0], "test", "test", "test", "test", "test");
+addTodo(projectList[0], "test", "test", "test", "test", "test");
+addTodo(projectList[0], "test", "test", "test", "test", "test");
+addTodo(projectList[0], "test", "test", "test", "test", "test");
+
+addProject(projectId, "Test", "All to do's");
+addTodo(projectList[1], "test", "test", "test", "test", "test");
+addTodo(projectList[1], "test", "test", "test", "test", "test");
+addTodo(projectList[1], "test", "test", "test", "test", "test");
+addTodo(projectList[1], "test", "test", "test", "test", "test");
+addTodo(projectList[1], "test", "test", "test", "test", "test");
 
 function addProject(id, title, description) {
   let projectNew = createProject(id, title, description);
@@ -30,7 +41,6 @@ function addTodo(project, title, description, dueDate, priority, notes) {
     notes
   );
 
-  console.log(todoItem);
   let todoCard = generateTodoCard(
     todoItem.title,
     todoItem.description,
@@ -38,7 +48,7 @@ function addTodo(project, title, description, dueDate, priority, notes) {
     todoItem.dueDate,
     todoItem.isChecked
   );
-
+  let todoContainer = document.getElementById("todo-container");
   todoContainer.appendChild(todoCard);
   project.todos.push(todoItem);
   project.todoId++;
@@ -68,11 +78,25 @@ projectButtons.forEach((element) => {
   element.addEventListener("click", () => {
     contentContainer.innerHTML = "";
     let contentObject = contentGenerator("HomeTest", "Descr Test");
-    console.log(contentContainer);
-    console.log(contentObject);
     contentContainer.appendChild(contentObject.headerBar);
     contentContainer.appendChild(contentObject.todoContainer);
+
+    let id = element.className.split(" ")[1];
+    console.log(id);
+    changeContentDisplayed(id);
   });
 });
 
-function changeContentDisplayed() {}
+function changeContentDisplayed(id) {
+  projectList[id].todos.forEach((todo) => {
+    let todoCard = generateTodoCard(
+      todo.title,
+      todo.description,
+      todo.priority,
+      todo.dueDate,
+      todo.isChecked
+    );
+    let todoContainer = document.getElementById("todo-container");
+    todoContainer.appendChild(todoCard);
+  });
+}
