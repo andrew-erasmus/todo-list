@@ -2,11 +2,14 @@ import "./styles.css";
 import { createProject } from "./project.js";
 import { createTodo } from "./listItem.js";
 import { generateTodoCard } from "./todoItemUI.js";
+import { contentGenerator } from "./projectContentUI.js";
 
 let projectList = [];
 let projectId = 0;
+let todoContainer = document.getElementById("todo-container");
+let contentContainer = document.getElementById("content");
+
 addProject(projectId, "Home", "All to do's");
-console.log(projectList);
 
 function addProject(id, title, description) {
   let projectNew = createProject(id, title, description);
@@ -35,7 +38,7 @@ function addTodo(project, title, description, dueDate, priority, notes) {
     todoItem.dueDate,
     todoItem.isChecked
   );
-  let todoContainer = document.getElementById("todo-container");
+
   todoContainer.appendChild(todoCard);
   project.todos.push(todoItem);
   project.todoId++;
@@ -59,3 +62,17 @@ newTodoButton.addEventListener("click", () => {
     ""
   );
 });
+
+let projectButtons = document.querySelectorAll(".project-button");
+projectButtons.forEach((element) => {
+  element.addEventListener("click", () => {
+    contentContainer.innerHTML = "";
+    let contentObject = contentGenerator("HomeTest", "Descr Test");
+    console.log(contentContainer);
+    console.log(contentObject);
+    contentContainer.appendChild(contentObject.headerBar);
+    contentContainer.appendChild(contentObject.todoContainer);
+  });
+});
+
+function changeContentDisplayed() {}
