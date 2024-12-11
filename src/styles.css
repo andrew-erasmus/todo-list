@@ -44,6 +44,7 @@ a {
   border-radius: 80px;
   padding: 6px 8px 6px 8px;
   cursor: pointer;
+  user-select: none;
 }
 
 a:hover {
@@ -95,6 +96,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
 }
 
 .todo-card {
