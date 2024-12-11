@@ -1,4 +1,5 @@
 let generateTodoCard = function (
+  id,
   title,
   description,
   priority,
@@ -7,7 +8,7 @@ let generateTodoCard = function (
 ) {
   // Create the main container div
   const todoCard = document.createElement("div");
-  todoCard.className = "todo-card";
+  todoCard.className = "todo-card " + id;
 
   // Checkbox input
   const checkbox = document.createElement("input");

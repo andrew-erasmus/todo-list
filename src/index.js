@@ -42,6 +42,7 @@ function addTodo(project, title, description, dueDate, priority, notes) {
   );
 
   let todoCard = generateTodoCard(
+    todoItem.id,
     todoItem.title,
     todoItem.description,
     todoItem.priority,
@@ -90,6 +91,7 @@ projectButtons.forEach((element) => {
 function changeContentDisplayed(id) {
   projectList[id].todos.forEach((todo) => {
     let todoCard = generateTodoCard(
+      todo.id,
       todo.title,
       todo.description,
       todo.priority,
